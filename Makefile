@@ -6,7 +6,7 @@
 #    By: ataji <ataji@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/06 23:28:50 by ataji             #+#    #+#              #
-#    Updated: 2022/04/26 04:12:15 by ataji            ###   ########.fr        #
+#    Updated: 2022/04/27 02:04:21 by ataji            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,9 +38,9 @@ SRC = push_swap.c \
 	optim_operation.c \
 	count_stack.c \
 	freeing.c
-SRC_B = my_checker/checker.c \
-	my_checker/get_next_line.c \
-	my_checker/get_next_line_utils.c \
+SRC_B = checker_/checker.c \
+	checker_/get_next_line.c \
+	checker_/get_next_line_utils.c \
 	freeing.c \
 	push_a_b_char.c \
 	rev_rotate_char.c \

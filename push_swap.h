@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 00:56:00 by ataji             #+#    #+#             */
-/*   Updated: 2022/04/26 23:11:42 by ataji            ###   ########.fr       */
+/*   Updated: 2022/04/27 02:04:21 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
-# include "my_checker/get_next_line.h"
+# include "checker_/get_next_line.h"
 
 typedef struct s_stack
 {
