@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 03:06:06 by ataji             #+#    #+#             */
-/*   Updated: 2022/04/26 05:48:13 by ataji            ###   ########.fr       */
+/*   Updated: 2022/04/26 21:58:18 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,17 @@
 
 void	remove_stack(t_stack **stack)
 {
-	if (*stack)
-	{
-		if ((*stack)->next)
-			remove_stack(&(*stack)->next);
-		free((*stack)->next);
+	t_stack	*curr;
+	t_stack	*aux;
+
+	curr = *stack;
+	while (curr != NULL)
+	{		
+		aux = curr;
+		curr = curr->next;
+		free(aux);
 	}
+	*stack = NULL;
 }
 
 void	clear_memory(t_stack **stack_a, t_stack **stack_b, t_swap *swap)
@@ -28,4 +33,3 @@ void	clear_memory(t_stack **stack_a, t_stack **stack_b, t_swap *swap)
 	remove_stack(stack_b);
 	free(swap);
 }
-

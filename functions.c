@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 13:08:42 by ataji             #+#    #+#             */
-/*   Updated: 2022/04/26 04:19:26 by ataji            ###   ########.fr       */
+/*   Updated: 2022/04/26 22:34:15 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,26 +70,12 @@ void	push_k_to_stack(t_stack **stack, t_swap *swap)
 	int	i;
 
 	swap->tab = ft_split(swap->str, ' ');
-	free(swap->str);
 	ascii_int(swap);
 	if (swap->count_args == 1)
 		return ;
 	i = 0;
 	while (i < swap->count_args)
 		malloc_stack(stack, swap->k[i++]);
-}
-
-// you must delet it after you finish
-void	print_stack(t_stack *stack)
-{
-	if (stack == NULL)
-		printf("Empty stack");
-	while (stack != NULL)
-	{
-		printf("%d ", stack->value);
-		stack = stack->next;
-	}
-	printf("\n");
 }
 
 void	minimiz_main(int ac, char **av, t_swap *swap)

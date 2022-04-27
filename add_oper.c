@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 05:43:11 by ataji             #+#    #+#             */
-/*   Updated: 2022/04/26 17:08:23 by ataji            ###   ########.fr       */
+/*   Updated: 2022/04/26 22:01:26 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,18 @@ void	double_remove(t_oper *second, t_oper *first)
 
 void	remove_oper(t_oper **oper)
 {
-	if (*oper)
-	{
-		if ((*oper)->next)
-			remove_oper(&(*oper)->next);
-		ft_strdel(&(*oper)->data);
-		free((*oper)->next);
+	t_oper	*curr;
+	t_oper	*aux;
+
+	curr = *oper;
+	while (curr != NULL)
+	{		
+		aux = curr;
+		curr = curr->next;
+		ft_strdel(&aux->data);
+		free(aux);
 	}
+	*oper = NULL;
 }
 
 void	add_oper(t_oper **oper, char *data)

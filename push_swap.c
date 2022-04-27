@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 15:56:33 by ataji             #+#    #+#             */
-/*   Updated: 2022/04/26 18:00:54 by ataji            ###   ########.fr       */
+/*   Updated: 2022/04/26 22:34:29 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,23 +62,13 @@ void	push_k_to_stack_a(t_stack **stack, t_swap *swap)
 	i = 0;
 	while (i < swap->count_args)
 		malloc_stack_a(stack, swap->k[i++]);
+	free(swap->k);
 }
-
-// you must delet it after you finish
-// void	print_stack(t_stack *stack)
-// {
-// 	if (stack == NULL)
-// 		printf("Empty stack");
-// 	while (stack != NULL)
-// 	{
-// 		printf("%d ", stack->value);
-// 		stack = stack->next;
-// 	}
-// 	printf("\n");
-// }
 
 void	mini_main(int ac, char **av, t_swap *swap)
 {
+	swap->i = 1;
+	swap->j = 0;
 	if (ac == 1)
 		return ;
 	while (++swap->j < ac)
@@ -102,20 +92,11 @@ int	main(int ac, char **av)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
-	if (ac == 1 || ac == 2)
+	if (ac == 1)
 		return (0);
 	swap = malloc(sizeof(t_swap));
-	stack_a = malloc(sizeof(t_stack));
-	stack_b = malloc(sizeof(t_stack));
-	oper = malloc(sizeof(t_oper));
-	stack_a = NULL;
-	stack_b = NULL;
-	oper = NULL;
-	swap->i = 1;
-	swap->j = 0;
 	mini_main(ac, av, swap);
 	push_k_to_stack_a(&stack_a, swap);
-	free(swap->k);
 	sorting(&stack_a, &stack_b, swap, &oper);
 	optim_operations(&oper);
 	print_operations(oper);

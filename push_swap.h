@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 00:56:00 by ataji             #+#    #+#             */
-/*   Updated: 2022/04/26 05:01:28 by ataji            ###   ########.fr       */
+/*   Updated: 2022/04/26 23:11:42 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,8 @@ void	facl1(t_oper *fi, t_oper *se, t_oper *prev, t_oper *tmp);
 void	optim_operations(t_oper **oper);
 //checker
 void	read_commands(t_stack **stack_a, t_stack **stack_b, t_swap *swap);
-void	init_commands(char *comm, t_stack **stack_a, t_stack **stack_b, t_swap *swap);
+void	init_commands(char *comm, t_stack **stack_a, \
+	t_stack **stack_b, t_swap *swap);
 void	break_programm(t_stack **stack_a, t_stack **stack_b, t_swap *swap);
 int		ft_strcmp(char *s1, char *s2);
 void	clear_memory(t_stack **stack_a, t_stack **stack_b, t_swap *swap);
