@@ -1,0 +1,6 @@
+push_swap
+checker
+.vscode/*
+*.out
+*.o
+*dSYM*
